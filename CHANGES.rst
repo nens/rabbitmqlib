@@ -2,7 +2,7 @@ Changelog of rabbitmqlib
 ===================================================
 
 
-0.4 (unreleased)
+0.4 (2012-11-02)
 ----------------
 
 - Nothing changed yet.
