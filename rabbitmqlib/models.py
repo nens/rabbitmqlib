@@ -1,6 +1,6 @@
 # (c) Nelen & Schuurmans.  MIT licensed, see LICENSE.rst.
 from __future__ import unicode_literals
-from django.utils import simplejson
+import json
 import pika
 
 
@@ -23,7 +23,7 @@ class Producer(Rabbit):
             auto_delete=False)
         ch.queue_declare(queue=queue)
         ch.queue_bind(queue=queue, exchange=exchange, routing_key=routing_key)
-        ch.basic_publish(body = simplejson.dumps(msg),
+        ch.basic_publish(body = json.dumps(msg),
             exchange = exchange, routing_key=routing_key)
 
 
